@@ -4,7 +4,7 @@ provider "aws" {
 
 resource "random_pet" "name" {
   length = 2
-  prefix = "TF-Modules_and_workspaces-"
+  prefix = "TF-Modules_and_workspaces-network-"
 }
 
 locals {

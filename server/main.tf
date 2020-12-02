@@ -63,7 +63,7 @@ resource "aws_instance" "server" {
   instance_type               = "t2.medium"
   associate_public_ip_address = true
   subnet_id                   = data.terraform_remote_state.network.outputs.subnet_id
-  vpc_security_group_ids      = [aws_security_group.consul.id]
+  vpc_security_group_ids      = [aws_security_group.server.id]
   user_data                   = file("./nginx.sh")
   key_name                    = aws_key_pair.default.id
   

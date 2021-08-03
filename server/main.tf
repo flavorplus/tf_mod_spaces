@@ -6,6 +6,11 @@ provider "aws" {
   region = var.aws_region
 }
 
+provider "vault" {
+  address = var.vault_addr
+  token = var.vault_token
+}
+
 provider "random" {
   version = "3.0.0"
 }
@@ -94,4 +99,13 @@ resource "aws_security_group" "server" {
     protocol    = "-1"
     cidr_blocks = ["0.0.0.0/0"]
   }
+}
+
+data "vault_generic_secret" "secret" {
+  path = "/kv/test"
+}
+
+output "secret" {
+  value = data.vault_generic_secret.secret.data
+  description = "The secret retreived from the Vault server."
 }

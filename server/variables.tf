@@ -28,3 +28,13 @@ variable "aws_region" {
   default     = "eu-central-1"
 }
 
+variable "vault_addr" {
+  description = "The address of the Vault server to contact"
+  default     = ""
+}
+
+variable "vault_token" {
+  description = "The Vault token to use to autheticate to the Vault server"
+  default     = ""
+}
+

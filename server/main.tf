@@ -102,7 +102,7 @@ resource "aws_security_group" "server" {
 }
 
 data "vault_generic_secret" "secret" {
-  path = "/kv/test"
+  path = var.vault_path
 }
 
 output "secret" {

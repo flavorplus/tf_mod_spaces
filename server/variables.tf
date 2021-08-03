@@ -38,3 +38,8 @@ variable "vault_token" {
   default     = ""
 }
 
+variable "vault_path" {
+  default = ""
+  description = "Path of the secret in Vault to lookup."
+}
+

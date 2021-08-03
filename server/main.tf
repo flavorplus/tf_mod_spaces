@@ -102,6 +102,7 @@ resource "aws_security_group" "server" {
 }
 
 data "vault_generic_secret" "secret" {
+  count = var.vault_addr != "" && var.vault_token != "" && var.vault_path != "" ? 1 : 0
   path = var.vault_path
 }
 

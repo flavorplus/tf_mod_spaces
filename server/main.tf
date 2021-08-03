@@ -108,5 +108,5 @@ data "vault_generic_secret" "secret" {
 output "secret" {
   value = data.vault_generic_secret.secret.data
   description = "The secret retreived from the Vault server."
-  sensitive = true
+  sensitive = false
 }

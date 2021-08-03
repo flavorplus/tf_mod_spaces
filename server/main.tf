@@ -107,6 +107,6 @@ data "vault_generic_secret" "secret" {
 }
 
 output "secret" {
-  value = nonsensitive(data.vault_generic_secret.secret.data)
+  value = nonsensitive(data.vault_generic_secret.secret[0].data)
   description = "The secret retreived from the Vault server."
 }
